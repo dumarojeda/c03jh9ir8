@@ -50,6 +50,7 @@
   img {
     display: block;
     margin: 0 auto;
+    max-width: 100%;
   }
   @include bp-md {
     min-height: 675px;
