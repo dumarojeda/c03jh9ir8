@@ -3,3 +3,61 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+//Mixins for responsive
+// 320px
+@mixin bp-xs {
+  @media screen and (min-width: 320px) {
+    @content;
+  }
+}
+
+// 480px
+@mixin bp-sm {
+  @media screen and (min-width: 480px) {
+    @content;
+  }
+}
+
+// 768px
+@mixin bp-md {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+// 992px
+@mixin bp-lg {
+  @media screen and (min-width: 992px) {
+    @content;
+  }
+}
+
+// 1200px
+@mixin bp-xl {
+  @media screen and (min-width: 1200px) {
+    @content;
+  }
+}
+
+.actor {
+  background-color: #f1f1f1;
+  border: 1px solid #ddd;
+  padding: 1em;
+  margin-bottom: 1em;
+  min-height: 710px;
+  border-radius: 5px;
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+  @include bp-md {
+    min-height: 675px;
+  }
+  @include bp-lg {
+    min-height: 780px;
+  }
+  @include bp-xl {
+    min-height: 700px;
+  }
+}

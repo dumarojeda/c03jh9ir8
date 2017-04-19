@@ -1,24 +1,22 @@
-<table class="table table-striped">
-  <tr>
-    <th>Foto</th>
-    <th>Nombre</th>
-    <th>Bio</th>
-    <th>Fecha de Nacimiento</th>
-    <th>Lugar de Nacimiento</th>
-    <th>Death Date</th>
-    <th>Death Place</th>
-  </tr>
+<div class="row">
+  <div class="col-sm-12">
+    <h1>Actors</h1>
+  </div>
+</div>
+<div class="row">  
   <% @actors.each do |actor| %>
-    <tr>
-      <td><img src="<%= actor.image_url %>" alt=""></td>
-      <td><%= actor.name %></td>
-      <td><%= actor.bio %></td>
-      <td><%= actor.birth_date %></td>
-      <td><%= actor.birth_place %></td>
-      <% unless actor.alive %>
-        <td><%= actor.death_date %></td>
-        <td><%= actor.death_place %></td>
-      <% end %>
-    </tr>
+    <div class="col-sm-6 col-md-4">
+      <div class="actor">      
+        <img src="<%= actor.image_url %>" alt="<%= actor.name %>">
+        <h3><%= actor.name %></h3>
+        <p><%= actor.bio %></p>
+        <p><strong>Fecha de Nacimiento: </strong><%= actor.birth_date %></p>
+        <p><strong>Lugar de Nacimiento: </strong><%= actor.birth_place %></p>
+        <% unless actor.alive %>
+          <p><strong>Fecha de Fallecimiento: </strong><%= actor.death_date %></p>
+          <p><strong>Lugar de Fallecimiento: </strong><%= actor.death_place %></p>
+        <% end %>
+      </div>
+    </div>
   <% end %>
-</table>
+</div>
