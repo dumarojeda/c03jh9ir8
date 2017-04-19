@@ -3,17 +3,17 @@ class ActorsController < ApplicationController
     @actors = Actor.all
   end
 
-  def show
-    @actor = Actor.find(params[:id])
-  end
-
   def new
+    @actor = Actor.new
   end
 
   def create
     @actor = Actor.create(actor_params)
-    @actor.save
-    redirect_to actors_path
+    if @actor.save
+      redirect_to actors_path
+    else
+      render 'new'
+    end
   end
 
   private
