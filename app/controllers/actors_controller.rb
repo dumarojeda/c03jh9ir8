@@ -9,8 +9,11 @@ class ActorsController < ApplicationController
 
   def create
     @actor = Actor.create(actor_params)
-    @actor.save
-    redirect_to actors_path
+    if @actor.save
+      redirect_to actors_path
+    else
+      render 'new'
+    end
   end
 
   private
